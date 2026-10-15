@@ -1,0 +1,16 @@
+import unittest
+from calc import is_even, divide
+
+class TestCalc(unittest.TestCase):
+    def test_even(self):
+        self.assertTrue(is_even(4))
+
+    def test_odd(self):
+        self.assertFalse(is_even(5))
+
+    def test_zero_division(self):
+        with self.assertRaises(ZeroDivisionError):
+            divide(1, 0)
+
+if __name__ == "__main__":
+    unittest.main()
